@@ -1,9 +1,11 @@
-import Image from "next/image";
-
+import { headers } from 'next/headers'
 export default function Home() {
 
-const APIPage = async () => {
-  const res = await fetch('http://localhost:3000/api', 
+const APIPage = async (context :any) => {
+  const header = await headers();
+  const host = header.get('host');
+  console.log(host)
+  const res = await fetch(`http://${host}/api`, 
       {
           method: 'GET', // Must match what your API expects
           headers: {

@@ -3,9 +3,10 @@
 import React, { useState, useEffect } from 'react';
 
 const ClientSide = () => {
-   const [data, setData] = useState("");
+
+     const [data, setData] = useState("");
    useEffect(() => {
-        fetch('http://localhost:3000/client',
+        fetch('client',
             {
                 method: 'GET', // Must match what your API expects
                 headers: {
